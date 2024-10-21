@@ -6,7 +6,7 @@ import './style.css'
 function App() {
   return (
     <div className="todo-container">
-      <Header />
+      <Header title="TODOie App" />
       <TodoItem text="Eat" />
       <TodoItem text="Code" />
       <TodoItem text="Sleep" />
