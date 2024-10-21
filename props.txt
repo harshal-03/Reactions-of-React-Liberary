@@ -1,0 +1,21 @@
+This file contains the information about Props deliverred by "Piyush Garg"
+
+Props are like parameters to a function
+
+e.g.:- 
+i> wihtout props:- 
+    function MyHeader(){
+        return <h1>Hello World</h1>
+    }
+this is not a good practice as it will always render the <h1> tag only
+
+ii> with props:- 
+    function MyHeader(){
+        return <h1>{props.title}</h1>
+    }
+
+    <MyHeader title="This is my heading" />
+
+"We render the <h1> tag content inside the curly bracket {} as it is dynamic value"
+
+Props basically makes our compponents more generic
