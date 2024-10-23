@@ -1,0 +1,58 @@
+"hooks are very important thing in react"
+
+there are many differernt hooks
+
+life cycle of components:- Constructed -> Mounted -> Updated -> Un-Mounted   (this is in loop)
+
+useState Hook :- 
+    1> State :- A state of a component is a variable that holds the some information that may change over the lifetime of the component
+    Whenever the "value" of the state changes, the "component re-renders itself" with "updated values".
+    Each component has its own state and the state of each component is present in the local scope of the component making the state un-shareable between the components
+    syntax of useState hook:- const [state, setState] = useState(initialState);
+
+e.g.: - 
+import React from 'react';
+
+function CounterComponent(){
+    const [count,setCount] = useState(0);
+
+    return(
+        <div>
+            <p> Count is {count}</p>
+            <button onCLick={() => setCount(count+1)} > Increment </button>
+        </div>
+    );
+}
+
+useState() returns the array of size 2 where the 1st index stores the value passed as parameter and the 2nd index stores the function
+refer this to understand above line:- const[count, setCount] = useState(12) here the count is at 1st index and it holds the 12 as value in it and setCount function which will either Increment or decrement the value
+
+
+useEffect Hook:- 
+    It is the type of hook that is used when we want to render the component in-between any stage of the lifecycle of the component
+    usage:- Run code during the change in lifecycle of component
+
+e.g.:- 
+    import React from 'react'
+    import {useEffect} from 'react';
+
+    const MyComponent(){
+        // this is the useEffect hook
+        // its first argument is function which runs when the lifecycle of the component is changed
+        // second argument is the empty array which is refered as dependency array
+        useEffect( ()=>{
+            console.log('Hello');
+        }, [])
+        
+        return (
+            <div>
+                <p> Hey There </p>
+            </div>
+        )
+    }
+
+    Imp:- when the dependency array of useEffect is empty it only execute when the component is mounted and when we pass any 
+        value to the dependency array it executes when the state of that value is changed
+
+        "Whenever the dependency value passed to useEffect dependency array changes it's state from one state of its lifecycle to another then the useEffect hook will execute
+        
