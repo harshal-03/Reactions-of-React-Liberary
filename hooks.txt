@@ -56,3 +56,27 @@ e.g.:-
 
         "Whenever the dependency value passed to useEffect dependency array changes it's state from one state of its lifecycle to another then the useEffect hook will execute
         
+
+useCallback Hook :-
+    useCallback is a React hook that lets you cache a function definition between re-renders.
+    syntax :- useCallback(function, dependencies);
+    call useCallback hook at the top of your component to cache the function definition between re-renders
+e.g.:- 
+    import { useCallback } from 'react';
+
+    export default function ProductPage({ productId, referrer, theme }) {
+    const handleSubmit = useCallback((orderDetails) => {
+        post('/product/' + productId + '/buy', {
+        referrer,
+        orderDetails,
+        });
+    }, [productId, referrer]);
+    }
+
+here inside the [] brackets we mention the dependencies in above example 'productId' and 'referrer' are our dependencies
+
+useRef Hook:- 
+    It is used to store the refence of something which can be used later in the production 
+    where in passwordGenerator project I used it to store the reference of the password from the input box where random password in generated and then later used 
+    that reference to copy the password from input box to the clipboard 
+    for this we have to create one seprate variable to store the refernece in it
