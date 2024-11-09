@@ -80,3 +80,8 @@ useRef Hook:-
     where in passwordGenerator project I used it to store the reference of the password from the input box where random password in generated and then later used 
     that reference to copy the password from input box to the clipboard 
     for this we have to create one seprate variable to store the refernece in it
+
+useParams Hook:- 
+    The useParams hook returns an object of key/value pairs of the dynamic params from the 
+    current URL that were matched by the <Route path>. Child routes inherit all params from their parent routes.
+    It is used in React Route DOM to gain access to the specific Routing Path source
